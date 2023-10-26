@@ -16,6 +16,8 @@ Arvore Binaria de Busca
     -Nó externo: nó que não possui filhos
     -Nó raiz: nó que não possui pai
     -Nó folha: nó que não possui filhos
+    -Profundidade: distancia de um nó até a raiz
+    -Grau de um nó: número de filhos que um nó possui
     -Desempenho 
         Melhor caso: lgN (árvore balanceada)
         Pior caso: N (árvore desbalanceada)
