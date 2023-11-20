@@ -16,15 +16,15 @@ int filaDinamicaVazia(FilaDinamica *fila){
 
 //Insere um novo elemento no fim da fila
 int insereFilaDinamica(FilaDinamica *fila, int valor){
-    No *novo = (No*)malloc(sizeof(No));
-    if(novo == NULL){
+    No *novo = (No*)malloc(sizeof(No)); //aloca memoria para o novo no
+    if(novo == NULL){ 
         return 0;
-    }
-    novo->valor = valor;
-    novo->prox = NULL;
-    if(filaDinamicaVazia(fila)){
+    }   
+    novo->valor = valor; //insere o valor no novo no
+    novo->prox = NULL; //o proximo do novo no aponta para NULL
+    if(filaDinamicaVazia(fila)){ //se a fila estiver vazia, o inicio aponta para o novo no
         fila->inicio = novo;
-    }else{
+    }else{ //se nao, o proximo do ultimo no aponta para o novo no
         fila->fim->prox = novo;
     }
     fila->fim = novo;
@@ -36,10 +36,10 @@ int removeFilaDinamica(FilaDinamica *fila, int *valor){
     if(filaDinamicaVazia(fila)){
         return 0;
     }
-    No *aux = fila->inicio;
-    *valor = aux->valor;
-    fila->inicio = aux->prox;
-    free(aux);
+    No *aux = fila->inicio; //aux aponta para o inicio da fila
+    *valor = aux->valor; //o valor do inicio da fila e armazenado
+    fila->inicio = aux->prox; //o inicio da fila aponta para o proximo do inicio
+    free(aux); //libera a memoria do inicio da fila
     return 1;
 }
 

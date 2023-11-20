@@ -1,16 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct celula{
+typedef struct celula 
+{
     int dado;
     struct celula *prox;
-}celula;
+} celula;
 
-int empilha (celula *p, int x){
-    celula *novo = malloc(sizeof(celula));
-    if(novo == 0) return 0;
-    novo -> dado =x;
-    novo -> prox = p -> prox;
-    p -> prox = novo;
-    return 0;
+void empilha(celula *p, int x)
+{
+    celula *nova = malloc(sizeof(celula));
+
+    nova->dado = x;
+    nova->prox = p->prox;
+    p->prox = nova;
+}
+
+int desempilha(celula *p, int *y)
+{
+    celula *lixo = p->prox;
+    if(lixo == NULL)
+        return 0;
+    p->prox = lixo->prox;
+    *y = lixo->dado;
+
+    free(lixo);
+    return 1;
 }

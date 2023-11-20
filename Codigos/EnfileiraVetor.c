@@ -2,66 +2,33 @@
 #include <stdlib.h>
 
 typedef struct fila {
-    int *dados;
-    int N, p, u;
+    int *v;  // Vetor que representa a fila
+    int N;   // Tamanho da fila
+    int inicio, fim;  // Indicadores de inicio e final da fila
 } fila;
 
-int enfileira(fila *f, int x){
-    if(f->p == 0 && f->u == f->N - 1){ //caso 1
-        f->N *= 2;
-        f->dados = realloc(f->dados, f->N * sizeof(int));
-
-        if(f->dados == NULL)
-            return 0;
+// Function to enqueue an element x in the circular queue f
+int enfileira(fila *f, int x) {
+    // Check if the queue is full
+    if ((f->fim + 1) % f->N == f->inicio) {
+        return 0;  // Queue is full
     }
 
-    else if(f->p > 0 && f->u == f->p - 1){ //caso 2
-        if(f->u <= f->N - f->p){
-            int tam = f->N; //salvar o tamanho antes de redimensionar
-
-            f->N *= 2;
-            f->dados = realloc(f->dados, f->N * sizeof(int));
-
-            if(f->dados == NULL)
-                return 0;
-
-            for(int i = 0; i < f->u; i++, tam++)
-                f->dados[tam] = f->dados[i];
-
-            f->u = tam;
-        }
-
-        else if(f->u > f->N - f->p){
-            int tam = f->N;
-
-            f->N *= 2;
-            f->dados = realloc(f->dados, f->N * sizeof(int));
-
-            if(f->dados == NULL)
-                return 0;
-
-            int aux = f->N-1; //tamanho novo - 1
-
-            for(int i = tam-1; i > f->u; i--, aux--)
-                f->dados[aux] = f->dados[i];
-
-            f->p = aux+1;
-        }
-    }
-
-    f->dados[f->u] = x;
-    f->u++;
-
-    if(f->u == f->N)
-        f->u %= f->N;
-
+    // Enqueue the element
+    f->v[f->fim] = x;
+    f->fim = (f->fim + 1) % f->N;
     return 1;
 }
 
-int desenfileira(fila *f, int *y){
-    if(f->p == f->u) return 0;
+// Function to dequeue an element from the circular queue
+int desenfileira(fila *f, int *y) {
+    // Check if the queue is empty
+    if (f->inicio == f->fim) {
+        return 0;  // Queue is empty
+    }
 
-    *y = f->dados[f->p];
-    f->p++;
+    // Dequeue the element
+    *y = f->v[f->inicio];
+    f->inicio = (f->inicio + 1) % f->N;
     return 1;
 }

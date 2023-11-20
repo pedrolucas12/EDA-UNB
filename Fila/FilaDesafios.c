@@ -5,7 +5,7 @@ void comprimentoFila ( FilaDinamica * fila ) {
     }
     int cont = 0 ;
     No * aux = fila -> inicio ;
-    while ( aux != NULL ) {
+    while ( aux != NULL ) { 
         cont ++ ;
         aux = aux -> prox ;
     }
@@ -19,7 +19,7 @@ void distanciaFila ( FilaDinamica * fila , int a , int b ) {
     }
     int cont = 0 ;
     No * aux = fila -> inicio ;
-    while ( aux != NULL && aux -> info != a ) {
+    while ( aux != NULL && aux -> info != a ) { 
         cont ++ ;
         aux = aux -> prox ;
     }
