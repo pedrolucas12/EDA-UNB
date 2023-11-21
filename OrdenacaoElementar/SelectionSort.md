@@ -7,6 +7,7 @@ Algoritmo de Ordenacao - Selection Sort
         3. Selecionar o segundo menor elemento
         4. Posicionar na segunda posicao
         5. Repetir o processo ate que todos os elementos estejam ordenados
+    - Resumo : Procura o menor elemento e o coloca em primeiro. Depois analisa os elementos restantes em busca do menor e assim por diante
     - Complexidade : O(n^2)
     - Adaptabilidade : Nao Adaptativo
     - Estabilidade : Nao Estavel

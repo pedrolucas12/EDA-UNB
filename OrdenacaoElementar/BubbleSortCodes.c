@@ -6,7 +6,7 @@ void bubbleSort(int *vetor, int tamanho){
     for(i = 0; i < tamanho; i++){ //Percorre o vetor
         for(j = 0; j < tamanho - 1; j++){ //Percorre o vetor - 1
             if(vetor[j] > vetor[j + 1]){ //Se o elemento atual for maior que o proximo
-                aux = vetor[j]; //Troca os elementos
+                aux = vetor[j]; //Joga o maior elemento para o final
                 vetor[j] = vetor[j + 1]; //Troca os elementos
                 vetor[j + 1] = aux; //Troca os elementos
             }

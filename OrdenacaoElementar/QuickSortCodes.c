@@ -22,6 +22,27 @@ void QuickSort(int *vetor, int inicio, int fim){
     if(i < fim) QuickSort(vetor, i, fim); //Ordena a parte direita
 }
 
+//QuickSort com pivo sempre sendo ultimo elemento
+void QuickSortUltimo(int *vetor, int inicio, int fim){
+    int pivo, aux, i, j;
+    i = inicio;
+    j = fim - 1;
+    pivo = vetor[fim]; //Pivo é o ultimo elemento do vetor
+    do{ //Divide o vetor em duas partes
+        while (vetor[i] < pivo) i = i + 1; //Enquanto o valor da esquerda for menor que o pivo, continua a busca
+        while (vetor[j] > pivo) j = j - 1; //Enquanto o valor da direita for maior que o pivo, continua a busca
+        if(i <= j){ //Troca os valores da esquerda e da direita
+            aux = vetor[i]; 
+            vetor[i] = vetor[j]; 
+            vetor[j] = aux;
+            i = i + 1;
+            j = j - 1;
+        }
+    }while(j >= i); //Enquanto a esquerda for menor que a direita
+    if(inicio < j) QuickSortUltimo(vetor, inicio, j); //Ordena a parte esquerda
+    if(i < fim) QuickSortUltimo(vetor, i, fim); //Ordena a parte direita
+}
+
 //QuickSort com Mediana de 3
 void QuickSortMediana(int *vetor, int inicio, int fim){
     int pivo, aux, i, j, meio;

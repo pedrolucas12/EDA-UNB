@@ -8,6 +8,7 @@ Algoritmo de Ordenação QuickSort
         4 - Pivo na posição final
         5 - Pivo marca a divisão do vetor
         6 - Repetir o processo ate que o vetor esteja ordenado
+    Resumo: Escolhe um pivo e joga tudo que é menor para a esquerda e tudo que é maior para a direita, depois escolhe outro pivo e repete o processo
     Condicoes que devem ser satisfeitas
         1 - O vetor deve ser dividido em duas partes
         2 - Os elementos da primeira parte devem ser menores que os da segunda parte
