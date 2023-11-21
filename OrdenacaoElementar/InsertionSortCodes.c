@@ -67,3 +67,35 @@ void insertionSortListaEncadeada(ListaEncadeada *lista){
     }
 }
 
+
+
+/*
+    - A ideia é "puxar" os maiores e encaixar/inserir/reposicionar o elemento somente quando achar sua posição em relação aos seus antecessores (sem swaps, somente atribuições).
+*/
+//Insertion Sort Otimizado
+void insertionSortOtimizado(int *vetor, int tamanho){
+    int i, j, aux;
+    for(i = 1; i < tamanho; i++){ //percorre o vetor
+        aux = vetor[i]; //guarda o valor atual
+        for(j = i; (j > 0) && (aux < vetor[j-1]); j--){ //percorre o vetor da posicao atual ate a primeira posicao
+            vetor[j] = vetor[j-1]; //troca os valores
+        } 
+        vetor[j] = aux; //guarda o valor atual na posicao correta
+    }
+}
+
+/*
+- Mais uma otimização possível é utilizar um sentinela, inserindo o menor elemento na primeira posição antes das outras ordenações. Empurrar o menor para a esquerda (sentinela), enquanto "puxa" os maiores para a direita.
+*/
+//Insertion Sort com Sentinela
+void insertionSortSentinela(int *vetor, int tamanho){
+    int i, j, aux;
+    for(i = 1; i < tamanho; i++){ //percorre o vetor
+        aux = vetor[i]; //guarda o valor atual
+        for(j = i; (j > 0) && (aux < vetor[j-1]); j--){ //percorre o vetor da posicao atual ate a primeira posicao
+            vetor[j] = vetor[j-1]; //troca os valores
+        } 
+        vetor[j] = aux; //guarda o valor atual na posicao correta
+    }
+}
+
