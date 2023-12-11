@@ -40,6 +40,7 @@
     - O Counting Sort possui velocidade linear (O(n)) no melhor caso
     - Entretanto, seu desempenho pode ser afetado negativamente se a faixa de valores de entrada for muito grande, e a quantidade de elementos a serem ordenados for muito pequena.
     - Em resumo, o Counting Sort é uma ótima opção para ordenar um grande conjunto de dados com intervalo limitado e funciona contando as frequências, calculando as posições/índices através das frequências e distribuindo as chaves na ordem correta.
+    - ESTAVEL, NAO ADAPTATIVO, NAO IN-PLACE, O(n + k) no melhor caso, O(n + k) no pior caso, O(n + k) no caso medio
 
 ## Radix Sort - Ordena por partes da chave
     - O Radix Sort é um algoritmo de ordenação que compara as chaves ou dados de uma forma diferente dos outros algoritmos. Ele decompõe a chave em subestruturas que a compõem, como números (unidades, dezenas, centenas) ou palavras (letras) .
@@ -50,6 +51,7 @@
     - Além disso, o Radix Sort enfatiza a importância da extração do dígito mais significativo da chave, ordenando pela raiz (radix) da representação dos dados.
     - LSD (least significant digit) : Estavel, Nao In-Place, O(n) no melhor caso, O(n * w) no pior caso, O(n * w) no caso medio
     - MSD (most significant digit) : Estavel, Nao In-Place, O(n) no melhor caso, O(n * w) no pior caso, O(n * w) no caso medio
+    - ESTAVEL, NAO ADAPTATIVO, NAO IN-PLACE, O(n) no melhor caso, O(n * w) no pior caso, O(n * w) no caso medio
 
 ## Fila de Prioridades - Heap - Log n ( altura )
     - Arvore binaria completa: Uma arvore binaria completa é uma arvore binaria onde todos os niveis, exceto possivelmente o ultimo, estao completamente preenchidos, e todos os nos do ultimo nivel sao o mais a esquerda possivel.
@@ -66,7 +68,8 @@
     - O processo de ordenação do Heap Sort é dividido em duas fases: a construção da Heap e a ordenação propriamente dita. Na primeira fase, os elementos são inseridos na Heap um por um, de forma que a estrutura da Heap seja mantida. Essa fase tem complexidade O(n log n).
     - Na segunda fase, os elementos são removidos da Heap um por um, de forma que o maior elemento é sempre o primeiro a ser removido. Cada elemento removido é colocado na posição correta no vetor de saída. Essa fase tem complexidade O(n log n).
     - O Heap Sort é um algoritmo in-place, ou seja, não utiliza espaço extra para ordenar os elementos. Além disso, ele não é estável, ou seja, elementos iguais podem ter suas posições trocadas durante o processo de ordenação.
-    - O melhor caso de desempenho do Heap Sort é quando o vetor já está ordenado, pois a construção da Heap é desnecessária e a ordenação é feita em tempo linear O(n). No entanto, o pior caso é quando o vetor está completamente desordenado, pois a construção da Heap e a ordenação têm complexidade O(n log n).]
+    - O melhor caso de desempenho do Heap Sort é quando o vetor já está ordenado, pois a construção da Heap é desnecessária e a ordenação é feita em tempo linear O(n). No entanto, o pior caso é quando o vetor está completamente desordenado, pois a construção da Heap e a ordenação têm complexidade O(n log n).
+    -NAO ESTAVEL, IN-PLACE, O(n log n) no melhor caso, O(n log n) no pior caso, O(n log n) no caso medio
 
 ## Intro Sort
    - O Intro Sort é uma combinação de algoritmos de ordenação interna
@@ -75,3 +78,4 @@
    - Quando a profundidade da recursividade atinge um máximo estipulado, o algoritmo alterna para outro método de ordenação, como o merge sort ou o insertion sort, para evitar o pior caso de desempenho do quicksort.
    - A complexidade no pior caso do Intro Sort é O(n log n), garantindo um desempenho eficiente na maioria das situações.
    - O melhor caso de desempenho do Intro Sort é quando o vetor está quase ordenado ou possui um tamanho pequeno, pois o algoritmo pode se beneficiar do insertion sort, que tem complexidade linear em casos favoráveis.
+   - NAO ESTAVEL, IN-PLACE, O(n log n) no melhor caso, O(n log n) no pior caso, O(n log n) no caso medio

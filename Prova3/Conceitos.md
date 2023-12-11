@@ -56,3 +56,4 @@
 
 28) De acordo com a complexidade indicada na questão anterior, marque a função de recorrência do custo: F(n)=F(n-1)+F(n-n)+O(n): custo F(n-1) e F(n-n) das recursões, e O(n) do merge
 
+29) Arvore Completa : Uma arvore binaria completa é uma arvore binaria onde todos os niveis, exceto possivelmente o ultimo, estao completamente preenchidos, e todos os nos do ultimo nivel sao o mais a esquerda possivel.

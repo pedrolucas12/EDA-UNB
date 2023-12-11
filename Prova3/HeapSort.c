@@ -5,8 +5,8 @@ void fixUp(int k){
     }
 }
 
-void fixUpRecursivo (int k){
-    if (k>1 && less(pq[k/2], pq[k])){
+void fixUpRecursivo (int k){ //recursivo
+    if (k>1 && less(pq[k/2], pq[k])){ //enquanto tiver pai e o pai for menor que o filho
         exch(pq[k], pq[k/2]);
         fixUpRecursivo(k/2);
     }
@@ -46,7 +46,7 @@ void fixDown(int k, int N){
 
 void PQchange(int k, int valor){
     v[k] = valor;
-    if(v[k] < valor){
+    if(v[k] < valor){ //se o valor for menor que o anterior
         fixUp(k);
     }
     else{
@@ -55,7 +55,7 @@ void PQchange(int k, int valor){
 }
 
 void isEmpyt(Heap *h){
-    if(h->N == 0){
+    if(h->N == 0){ //se a heap estiver vazia
         return 1;
     }
     else{
@@ -78,12 +78,12 @@ void headSort (int *v, int l, int r){
 
 
 //HeapSort
-void HeapSort (int *A, int n){
+void HeapSort (int *A, int n){ 
     int i, aux;
-    for (i = n/2-1; i >= 0; i--){
+    for (i = n/2-1; i >= 0; i--){ //cria a heap
         binaryHead(A, n, i);
     }
-    for (i = n-1; i >= 0; i--){
+    for (i = n-1; i >= 0; i--){ //remove o maior elemento e conserta a heap
         aux = A[0];
         A[0] = A[i];
         A[i] = aux;
@@ -92,18 +92,18 @@ void HeapSort (int *A, int n){
 }
 
 //Criacao da Binary Head
-void binaryHead (int *A, int n, int i){
+void binaryHead (int *A, int n, int i){ 
     int l = 2*i+1;
     int r = 2*i+2;
     int maior = i;
     int aux;
-    if (l < n && A[l] > A[maior]){
+    if (l < n && A[l] > A[maior]){ //verifica qual o maior elemento
         maior = l;
     }
-    if (r < n && A[r] > A[maior]){
+    if (r < n && A[r] > A[maior]){ //verifica qual o maior elemento
         maior = r;
     }
-    if (maior != i){
+    if (maior != i){ //se o maior elemento nao for o pai
         aux = A[i];
         A[i] = A[maior];
         A[maior] = aux;

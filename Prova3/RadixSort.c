@@ -21,17 +21,17 @@ void RadixSort (int *A, int *B, int k, int n){
         }
     }
     while (m/exp > 0){ //Ordena o vetor B de acordo com o digito
-        for (i = 0; i < n; i++){
+        for (i = 0; i < n; i++){ //Conta quantas vezes cada elemento aparece no vetor B
             C[(A[i]/exp)%10] = C[(A[i]/exp)%10] + 1;
         }
-        for (i = 1; i < k; i++){
+        for (i = 1; i < k; i++){ //Soma o elemento anterior com o atual
             C[i] = C[i] + C[i-1];
         }
-        for (j = n-1; j >= 0; j--){
+        for (j = n-1; j >= 0; j--){ //Ordena o vetor A
             B[C[(A[j]/exp)%10]-1] = A[j];
             C[(A[j]/exp)%10] = C[(A[j]/exp)%10] - 1;
         }
-        for (i = 0; i < n; i++){
+        for (i = 0; i < n; i++){ //Copia o vetor B para o vetor A
             A[i] = B[i];
         }
         exp = exp*10;
@@ -60,6 +60,7 @@ int aux [r-l +1] , count [R +1];
     }
 }
 
+// Strings : retorna o désimo caractere
 int charAt ( char s [] , int d) {
     if (d < strlen ( s))
         return s [d ]; //d-é simo caractere
