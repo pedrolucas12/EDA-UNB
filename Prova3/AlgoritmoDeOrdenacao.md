@@ -51,13 +51,14 @@
     - LSD (least significant digit) : Estavel, Nao In-Place, O(n) no melhor caso, O(n * w) no pior caso, O(n * w) no caso medio
     - MSD (most significant digit) : Estavel, Nao In-Place, O(n) no melhor caso, O(n * w) no pior caso, O(n * w) no caso medio
 
-## Fila de Prioridades - Heap
+## Fila de Prioridades - Heap - Log n ( altura )
     - Arvore binaria completa: Uma arvore binaria completa é uma arvore binaria onde todos os niveis, exceto possivelmente o ultimo, estao completamente preenchidos, e todos os nos do ultimo nivel sao o mais a esquerda possivel.
     - Raiz : chave de maior prioridade
     - Nao ordena, quanto maior a prioridade, mais proximo da raiz
     - Insercao : Insere no final e sobe ate a posicao correta ( O(log n) )
     - Remocao : Remove a raiz e coloca o ultimo elemento no lugar, depois desce ate a posicao correta ( 2log n ) 
     - Trocar prioridade : Troca a prioridade e sobe ou desce ate a posicao correta ( O(log n) )
+    - Heap -> Vetor : Pai = i, Filho esquerdo = 2i, Filho direito = 2i + 1
 
 ## Heap Sort
     - O Heap Sort é um algoritmo de ordenação que utiliza a estrutura de dados Heap binária para ordenar um conjunto de elementos. Ele é considerado um algoritmo de ordenação eficiente, com complexidade de tempo O(n log n) no pior caso.

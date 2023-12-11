@@ -1,7 +1,7 @@
 //Implementacao do IntroSort
 
 void intro (int *v , int l , int r , int maxrecursao ) {
-    if( r -l <=15) { // no video do ribas ele utiliza l-r
+    if( r -l <=15) { // tamanho do vetor <= 15
         insertion_sort (v, l, r);
         return ;
     } else if( maxrecursao == 0) {
