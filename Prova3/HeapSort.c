@@ -110,3 +110,39 @@ void binaryHead (int *A, int n, int i){
         binaryHead(A, n, maior);
     }
 }
+
+
+//HeapSort Recursivo
+void HeapSortRecursivo (int *A, int n){ 
+    int i, aux;
+    for (i = n/2-1; i >= 0; i--){ //cria a heap
+        binaryHeadRecursivo(A, n, i);
+    }
+    for (i = n-1; i >= 0; i--){ //remove o maior elemento e conserta a heap
+        aux = A[0];
+        A[0] = A[i];
+        A[i] = aux;
+        binaryHeadRecursivo(A, i, 0);
+    }
+}
+
+//Criacao da Binary Head Recursivo
+void binaryHeadRecursivo (int *A, int n, int i){ 
+    int l = 2*i+1;
+    int r = 2*i+2;
+    int maior = i;
+    int aux;
+    if (l < n && A[l] > A[maior]){ //verifica qual o maior elemento
+        maior = l;
+    }
+    if (r < n && A[r] > A[maior]){ //verifica qual o maior elemento
+        maior = r;
+    }
+    if (maior != i){ //se o maior elemento nao for o pai
+        aux = A[i];
+        A[i] = A[maior];
+        A[maior] = aux;
+        binaryHeadRecursivo(A, n, maior);
+    }
+}
+

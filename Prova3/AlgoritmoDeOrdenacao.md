@@ -60,6 +60,7 @@
     - Insercao : Insere no final e sobe ate a posicao correta ( O(log n) )
     - Remocao : Remove a raiz e coloca o ultimo elemento no lugar, depois desce ate a posicao correta ( 2log n ) 
     - Trocar prioridade : Troca a prioridade e sobe ou desce ate a posicao correta ( O(log n) )
+    - Vetor comeca na posicao 1, pois a posicao 0 nao tem pai
     - Heap -> Vetor : Pai = i, Filho esquerdo = 2i, Filho direito = 2i + 1
 
 ## Heap Sort
