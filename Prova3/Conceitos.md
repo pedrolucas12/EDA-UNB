@@ -57,3 +57,25 @@
 28) De acordo com a complexidade indicada na questão anterior, marque a função de recorrência do custo: F(n)=F(n-1)+F(n-n)+O(n): custo F(n-1) e F(n-n) das recursões, e O(n) do merge
 
 29) Arvore Completa : Uma arvore binaria completa é uma arvore binaria onde todos os niveis, exceto possivelmente o ultimo, estao completamente preenchidos, e todos os nos do ultimo nivel sao o mais a esquerda possivel.
+
+30) Uma árvore binária é dita completa se:
+    • Todos os níveis exceto o último estão cheios
+    • Os nós do último nível estão o mais a esquerda possível
+
+31) Podemos representar tais árvores usando vetores, em relacao a v[i] , o filho esquerdo é v[2*i+1] e o filho direito é v[2*i+2] e o pai é v[(i-1)/2]
+
+32) Max-Heap : Em uma max-heap, o valor de cada nó é menor ou igual ao valor de seu pai, portanto, o maior valor está na raiz.
+
+33) Min-Heap : Em uma min-heap, o valor de cada nó é maior ou igual ao valor de seu pai, portanto, o menor valor está na raiz.
+
+34) Tempo do Insere no Heap : O(logn)
+
+35) Tempo do Remove no Heap : O(logn)
+
+36) Tempo do Constroi no Heap : O(n)
+
+37) Tempo do HeapSort : O(nlogn)
+
+38) Tempo de pegar o máximo no Heap : O(logn)
+
+39) Tempo de mudar a prioridade no Heap : O(logn)

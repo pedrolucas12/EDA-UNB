@@ -17,6 +17,23 @@ void CoutingSort (int *A, int *B, int k, int n){
     }
 }
 
+//Counting Sort com R + 1
+ void countingsort(int *v, int l, int r) {
+    int i, count[R+1];
+        for (i = 0; i <= R; i++) //cria o vetor de contagem
+            count[i] = 0; //inicializa com 0
+        for (i = l; i <= r; i++) //conta as ocorrencias
+            count[v[i] + 1]++; //+1 para evitar indices negativos
+        for (i = 1; i <= R; i++) //calcula os indices
+            count[i] += count[i-1]; //soma com o anterior
+        for (i = l; i <= r; i++) { //distribui os elementos
+            aux[count[v[i]]] = v[i]; //copia para o auxiliar
+            count[v[i]]++; //incrementa o indice
+        } 
+        for (i = l; i <= r; i++) //copia para o vetor original
+            v[i] = aux[i-l]; //+l para voltar ao indice original
+ }
+
 //Counting Sort Recursivo
 void CountingSortRecursivo (int *A, int *B, int k, int n, int i){ 
     int j;

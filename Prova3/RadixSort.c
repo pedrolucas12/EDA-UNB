@@ -38,6 +38,25 @@ void RadixSort (int *A, int *B, int k, int n){
     }
 }
 
+//RadixSort com R + 1
+void radixsort(int *v, int l, int r) {
+    int i, w, count[R+1];
+    for (w = 0; w < bytesword; w++) { // bytesword = 4
+        for (i = 0; i <= R; i++) // zerando
+            count[i] = 0;  // frequências
+    for (i = l; i <= r; i++) // frequências
+        count[digit(v[i], w) + 1]++;
+    for (i = 1; i <= R; i++) // posições
+        count[i] += count[i-1]; // soma com o anterior
+    for (i = l; i <= r; i++) { // distribuindo
+        aux[count[digit(v[i], w)]] = v[i]; // copia para o auxiliar
+        count[digit(v[i], w)]++; // incrementa o indice
+    }
+    for (i = l; i <= r; i++) // copiando
+        v[i] = aux[i-l]; // +l para voltar ao indice original
+    }
+ }
+
 void radix_sortLSD (int *v , int l , int r) {
 int i , w;
 int aux [r-l +1] , count [R +1];

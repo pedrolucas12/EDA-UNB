@@ -1,6 +1,13 @@
 
 # Algoritmos de Ordenação
 
+# Estabilidade:  
+    - Um algoritmo de ordenação é estável se ele mantém a ordem relativa original dos items com chaves de ordenação duplicadas
+    Algoritmos estáveis:
+        • InsertionSort, BubbleSort e MergeSort
+    Algoritmos não-estáveis:
+        • SelectionSort, Quicksort e Heapsort
+
 ## Merge Sort - Divide ate a unidade e depois MERGE
     - O Merge Sort é um algoritmo de ordenação eficiente baseado na técnica de dividir para conquistar. Ele funciona dividindo a lista a ser ordenada ate que a sublista seja unitaria, e depois mesclando essas sub-listas em uma lista ordenada.
     - Dividir e Conquistar: A metodologia utilizada pelo Merge Sort para resolver problemas mais complexos, como a ordenação de grandes conjuntos de dados, dividindo-os em subproblemas menores, resolvendo-os individualmente e combinando as soluções.

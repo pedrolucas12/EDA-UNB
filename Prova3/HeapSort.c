@@ -1,4 +1,4 @@
-void fixUp(int k){ 
+void fixUp(int k){  
     while (k>1 && less(pq[k/2], pq[k])){ //enquanto tiver pai e o pai for menor que o filho
         exch(pq[k], pq[k/2]);
         k = k/2; //verifica o avô
