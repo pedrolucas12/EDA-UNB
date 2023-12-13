@@ -1,0 +1,5 @@
+#### SELECTION SORT
+
+#### BUBBLE SORT
+
+#### INSERTION SORT
