@@ -65,6 +65,17 @@ void PQsort ( Item *v , int l , int r ) {
         v [ k ] = PQdelmax () ;
  }}
 
+//Extrair o maior item da fila de prioridade
+ Item extrai_maximo(p_fp fprio) {
+    int j, max = 0;
+    for (j = 1; j < fprio->n; j++)
+        if (fprio->v[max].chave < fprio->v[j].chave)
+            max = j;
+        troca(&(fprio->v[max]), &(fprio->v[fprio->n-1]));
+        fprio->n--;
+    return fprio->v[fprio->n];
+}
+
  // HeapSort
  void heap_sort ( Item *v , int l , int r ) {
     pq = v + l - 1; 
@@ -101,3 +112,27 @@ void intro_sort (int *v , int l , int r )
         intro (v , l , p - 1 , maxdepth - 1) ;
         intro (v , p +1 , r , maxdepth - 1) ;
     }}
+
+    //Desce_no_heap iterativo
+    void fixDown (int k , int N ) {
+        int j ;
+        // 2*k até N - dobrando a cada iteração
+        // altura da árvore ~ log k
+        while (2* k <= N ) { //~ log k
+            j = 2* k ;
+            if(j < N && less ( pq [ j ] , pq [ j +1]) ) j ++; //1
+            if (! less ( pq [ k ] , pq [ j ]) ) break ; //1
+            exch ( pq [ k ] , pq [ j ]) ;
+            k = j ;
+        }
+     }
+
+     //Sobe_no_heap iterativo
+        void fixUp (int k )
+        {
+            while (k >1 && less ( pq [ k /2] , pq [ k ]) )
+            {
+            exch ( pq [ k ] , pq [ k /2]) ;
+            k = k /2; // verifique o avô
+            }
+        }

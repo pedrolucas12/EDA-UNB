@@ -5,7 +5,8 @@
         - Arvore binaria completa : todos os niveis sao completos, exceto o ultimo, que é preenchido da esquerda para a direita
         - Raiz é a chave de maior prioridade
         - Pai sempre tem prioridade maior que os filhos
-        - Inserção:
+        - Altura da arvore é log(N)
+        - Inserção: O(log N)
             - Insere no final da arvore
             - Se a chave for maior que a do pai, troca com o pai ( restauracao - (fixUp))
             - Repete até que a chave seja menor que a do pai
@@ -21,6 +22,10 @@
             - Se a chave for maior que a do pai, troca com o pai ( restauracao - (fixUp))
             - Se a chave for menor que a do filho, troca com o filho ( restauracao - (fixDown))
             - F(k) = log(k) + 1
+        - Extrai maximo : O(lgN)
+        - Max-Heap 
+            - Pai sempre tem prioridade maior que os filhos
+            - Raiz é a chave de maior prioridade
            
 
 #### HEAP SORT
